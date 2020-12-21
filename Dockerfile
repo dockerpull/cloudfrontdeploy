@@ -10,4 +10,7 @@ ENV AWS_PAGER=''
 
 COPY entrypoint.sh /bin/
 
+RUN adduser --disabled-password --gecos "" action
+USER action
+
 ENTRYPOINT entrypoint.sh
