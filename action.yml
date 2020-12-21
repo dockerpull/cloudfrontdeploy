@@ -1,0 +1,19 @@
+name: 'CloudFrontDeploy'
+description: 'CloudFrontDeploy'
+inputs:
+  source:
+    description: 'Source path'
+    required: true
+  target:
+    description: 'Target path'
+    required: true
+  cloudfront:
+    description: 'CloudFront distribution'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.source }}
+    - ${{ inputs.target }}
+    - ${{ inputs.cloudfront }}
