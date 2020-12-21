@@ -8,8 +8,6 @@ RUN apk -Uuv add python3 py3-pip bash && \
 
 ENV AWS_PAGER=''
 
-COPY build_post_build.sh /bin/
-
-COPY github_push.sh /bin/
+COPY entrypoint.sh /bin/
 
 ENTRYPOINT entrypoint.sh
