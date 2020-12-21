@@ -13,4 +13,4 @@ COPY entrypoint.sh /bin/
 RUN adduser --disabled-password --gecos "" --uid 1001 action
 USER action
 
-ENTRYPOINT entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
