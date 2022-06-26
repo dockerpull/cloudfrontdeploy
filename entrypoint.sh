@@ -10,7 +10,7 @@ export commit=$GITHUB_SHA
 export branch=${GITHUB_REF##*/}
 
 echo [Debug] Push files to AWS S3 $target
-(set -x; aws s3 sync $source $target --delete)
+(set -x; aws s3 sync $source $target --delete --acl public-read )
 
 echo [Debug] Regenerate $cloudfront
 echo SECRET AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
